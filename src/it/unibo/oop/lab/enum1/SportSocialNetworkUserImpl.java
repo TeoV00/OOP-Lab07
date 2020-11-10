@@ -3,6 +3,9 @@
  */
 package it.unibo.oop.lab.enum1;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import it.unibo.oop.lab.socialnetwork.SocialNetworkUserImpl;
 import it.unibo.oop.lab.socialnetwork.User;
 
@@ -30,7 +33,7 @@ public class SportSocialNetworkUserImpl<U extends User> extends SocialNetworkUse
      * 
      * add a field to keep track of the set of sports followed/done by a user
      */
-
+    private final Set<Sport> sport;
     /**
      * Builds a new {@link SportSocialNetworkUserImpl}.
      * 
@@ -61,6 +64,7 @@ public class SportSocialNetworkUserImpl<U extends User> extends SocialNetworkUse
      */
     public SportSocialNetworkUserImpl(final String name, final String surname, final String user, final int userAge) {
         super(name, surname, user, userAge);
+        this.sport = new HashSet<>();
     }
 
     /*
@@ -78,7 +82,7 @@ public class SportSocialNetworkUserImpl<U extends User> extends SocialNetworkUse
      */
     // TODO
     public void addSport(final Sport sport) {
-
+        this.sport.add(sport);
     }
 
     /**
@@ -90,6 +94,31 @@ public class SportSocialNetworkUserImpl<U extends User> extends SocialNetworkUse
      * @return true if the user likes sport s
      */
     public boolean hasSport(final Sport s) {
-        return false;
+        return this.sport.contains(s);
     }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = super.hashCode();
+        result = prime * result + ((sport == null) ? 0 : sport.hashCode());
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (!super.equals(obj))
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        SportSocialNetworkUserImpl<U> other = (SportSocialNetworkUserImpl<U>) obj;
+        if (sport == null) {
+            if (other.sport != null)
+                return false;
+        } else if (!this.sport.equals(other.sport))
+            return false;
+        return true;
+    }    
 }
