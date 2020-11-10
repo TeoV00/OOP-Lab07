@@ -1,6 +1,5 @@
 package it.unibo.oop.lab.nesting1;
 
-import it.unibo.oop.lab.enum1.Sport;
 import it.unibo.oop.lab.socialnetwork.User;
 
 /**
