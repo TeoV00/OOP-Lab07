@@ -2,9 +2,6 @@
  * 
  */
 package it.unibo.oop.lab.enum2;
-import org.junit.validator.PublicClassValidator;
-
-import it.unibo.oop.lab.enum2.Place;
 
 /**
  * Represents an enumeration for declaring sports.
