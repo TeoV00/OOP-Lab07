@@ -16,51 +16,36 @@ package it.unibo.oop.lab.enum2;
  * 
  */
 public enum Sport {
-
     /*
-     * TODO
-     * 
-     * Declare the following sports:
-     * 
-     * - basket
-     * 
-     * - volley
-     * 
-     * - tennis
-     * 
-     * - bike
-     * 
-     * - F1
-     * 
-     * - motogp
-     * 
-     * - soccer
-     * 
+     * Declare the following sports: basket - volley - tennis - bike - F1 - motogp - soccer
      */
 
+    BASKET("Basket"),
+    SOCCER,TENNIS,BIKE,F1,MOTOGP,VOLLEY;
+    
     /*
-     * TODO
      * 
      * [FIELDS]
      * 
      * Declare required fields
      */
-
+    private int noTeamMember;
+    private Sport nameSport;
+    private Place place;
     /*
-     * TODO
-     * 
      * [CONSTRUCTOR]
      * 
      * Define a constructor like this:
      * 
      * - Sport(final Place place, final int noTeamMembers, final String actualName)
      */
-
+    Sport(final int noTeamMembers, final Sport actualName, final Place place){
+        this.place = place;
+        this.noTeamMember = noTeamMembers;
+        this.nameSport = actualName;
+    }
     /*
-     * TODO
-     * 
      * [METHODS] To be defined
-     * 
      * 
      * 1) public boolean isIndividualSport()
      * 
