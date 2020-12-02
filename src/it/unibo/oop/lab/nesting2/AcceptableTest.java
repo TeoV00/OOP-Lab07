@@ -29,7 +29,7 @@ public class AcceptableTest {
         /*
          * the following needs instantiation
          */
-        final Acceptable<Integer> acc = null;
+        final Acceptable<Integer> acc = new OneListAcceptable<>(list);
         final Acceptor<Integer> acceptor = acc.acceptor();
         for (final Integer el: list) {
             acceptor.accept(el);
